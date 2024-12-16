@@ -1,0 +1,7 @@
+{
+  "name": "mall-map",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
