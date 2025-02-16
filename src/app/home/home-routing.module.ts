@@ -6,6 +6,14 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
+  },
+  {
+    path: 'floor',
+    loadChildren: () => import('./floor/floor.module').then( m => m.FloorPageModule)
+  },
+  {
+    path: 'floor',
+    loadChildren: () => import('./floor/floor.module').then( m => m.FloorPageModule)
   }
 ];
 

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mall Plan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Sidebar Menu -->
+<ion-menu content-id="main-content" side="end" type="overlay" [disabled]="!isDesktop">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>{{ sectionTitle || 'Section Details' }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <p>{{ sectionDetails || 'Click on a section to see more details.' }}</p>
+  </ion-content>
+</ion-menu>
+
+<ion-content id="main-content">
+
+  <div class="map-container">
+    <div #svgContainer id="svgContainer"></div>
+  </div>
+</ion-content>
+
+
+<!-- Add the Ionic Modal here -->
+<ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>{{ modalTitle }}</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="closeModal()">Close</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <p>{{ modalDescription }}</p>
+    </ion-content>
+  </ng-template>
+</ion-modal>
